@@ -1,4 +1,4 @@
-package notes;
+package notes.thread;
 
 
 import java.util.concurrent.locks.Lock;
