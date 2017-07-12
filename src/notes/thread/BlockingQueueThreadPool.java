@@ -13,7 +13,7 @@ import java.util.concurrent.TimeUnit;
  * @date 2017年5月4日 上午10:02:21
  */
 public class BlockingQueueThreadPool {
-	
+
 	public static ArrayBlockingQueue<Runnable> queue = new ArrayBlockingQueue<Runnable>(10);
 
 	public static void main(String[] args) {
