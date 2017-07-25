@@ -36,7 +36,7 @@ public class Test {
 		out.close();*/
 		
 		
-		List<Stu> data = new ArrayList<Stu>();
+		/*List<Stu> data = new ArrayList<Stu>();
 		Stu stu=new Stu();
 		stu.setName("张三");
 		stu.setAge(25);
@@ -65,7 +65,37 @@ public class Test {
 		fields.put("name", "姓名");
 		fields.put("sex", "性别");
 		fields.put("age", "年龄");
-		ExcelUtil.ListToExcel(data, out, fields);
+		ExcelUtil.ListToExcel(data, out, fields);*/
+		
+		/*九九乘法表*/
+		for (int i = 1; i <= 9; i++) {
+			for (int j = 1; j<=i; j++) {
+				System.out.print(i+"*"+j+"="+i*j+"\t");
+			}
+			System.out.println();
+		}
+		System.out.println();
+		for (int i = 9; i >0; i--) {
+			for (int j = 1; j<=i; j++) {
+				System.out.print(i+"*"+j+"="+i*j+"\t");
+			}
+			System.out.println();
+		}
+		
+		
+		for (int i = 1; i <= 9; i++) {
+			for (int j = 1; j<=i; j++) {
+				System.out.print("*");
+			}
+			System.out.println();
+		}
+		
+		for (int i = 1; i <= 9; i++) {
+			for (int j =9; j>i; j--) {
+				System.out.print("*");
+			}
+			System.out.println();
+		}
 	}
 }
 
