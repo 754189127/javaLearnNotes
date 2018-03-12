@@ -78,6 +78,7 @@ public class ConnectionPool {
 		}catch(Exception e){
 			e.printStackTrace();
 		}
+		System.out.println("connCount:"+connCount);
 		//设置到本地线程
 		threadLocal.set(conn);
 		return conn;

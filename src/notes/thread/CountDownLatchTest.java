@@ -30,7 +30,7 @@ public class CountDownLatchTest {
         public Worker(String workerName ,int workTime ,CountDownLatch latch){  
              this.workerName=workerName;  
              this.workTime=workTime;  
-             this.latch=latch;  
+             this.latch=latch;
         }  
         public void run(){  
         	try{

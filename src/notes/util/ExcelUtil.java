@@ -28,8 +28,15 @@ public class ExcelUtil {
 	private static int sheetSize = 5000;// 单个sheet存储的数据
 
 	/**
-	 * @throws Exception 将列表数据excel导出 @param data 要导出的数据 @param out
-	 * excel的输出目的地，通过流输出 @param fields 每个属性对应的中文名 @return void @throws
+	 * @throws Exception
+	 *             将列表数据excel导出
+	 * @param data
+	 *            要导出的数据
+	 * @param out
+	 *            excel的输出目的地，通过流输出
+	 * @param fields
+	 *            每个属性对应的中文名
+	 * @return void @throws
 	 */
 	public static <T> void ListToExcel(List<T> data, OutputStream out, Map<String, String> fields) throws Exception {
 		if (null == data || data.size() == 0) {
@@ -82,23 +89,22 @@ public class ExcelUtil {
 		workbook.write(out);
 	}
 
-	
 	public static <T> List<T> excelToList() throws FileNotFoundException, IOException {
 		List<Stu> data = new ArrayList<Stu>();
-		HSSFWorkbook workBook=new HSSFWorkbook(new FileInputStream("E:/test2.xls"));
-		//迭代每一个选项卡
+		HSSFWorkbook workBook = new HSSFWorkbook(new FileInputStream("E:/test2.xls"));
+		// 迭代每一个选项卡
 		for (int i = 0; i < workBook.getNumberOfSheets(); i++) {
 			HSSFSheet sheet = workBook.getSheetAt(i);
-			if(null==sheet){
+			if (null == sheet) {
 				continue;
 			}
-			//循环行 
+			// 循环行
 			for (int j = 1; j <= sheet.getLastRowNum(); j++) {
-				HSSFRow row=sheet.getRow(j);
-				if(null==row){
+				HSSFRow row = sheet.getRow(j);
+				if (null == row) {
 					continue;
 				}
-				Stu stu=new Stu();
+				Stu stu = new Stu();
 				stu.setIDNo(row.getCell(0).getStringCellValue());
 				stu.setName(row.getCell(1).getStringCellValue());
 				stu.setSex(row.getCell(2).getStringCellValue());
@@ -108,40 +114,29 @@ public class ExcelUtil {
 		}
 		return (List<T>) data;
 	}
-	
+
 	public static void main(String[] args) throws Exception {
-		/*List<Stu> data = new ArrayList<Stu>();
-		Stu stu = new Stu();
-		stu.setName("张三");
-		stu.setAge(25);
-		stu.setIDNo("001");
-		stu.setSex("男");
-		data.add(stu);
+		/*
+		 * List<Stu> data = new ArrayList<Stu>(); Stu stu = new Stu();
+		 * stu.setName("张三"); stu.setAge(25); stu.setIDNo("001");
+		 * stu.setSex("男"); data.add(stu);
+		 * 
+		 * stu = new Stu(); stu.setName("李四"); stu.setAge(29);
+		 * stu.setIDNo("002"); stu.setSex("男"); data.add(stu);
+		 * 
+		 * stu = new Stu(); stu.setIDNo("003"); stu.setSex("女");
+		 * stu.setName("王五"); stu.setAge(21);
+		 * 
+		 * data.add(stu);
+		 * 
+		 * OutputStream out = new FileOutputStream("E:/test2.xls"); Map<String,
+		 * String> fields = new LinkedHashMap<String, String>();
+		 * fields.put("IDNo", "编号"); fields.put("name", "姓名"); fields.put("sex",
+		 * "性别"); fields.put("age", "年龄"); ExcelUtil.ListToExcel(data, out,
+		 * fields);
+		 */
 
-		stu = new Stu();
-		stu.setName("李四");
-		stu.setAge(29);
-		stu.setIDNo("002");
-		stu.setSex("男");
-		data.add(stu);
-
-		stu = new Stu();
-		stu.setIDNo("003");
-		stu.setSex("女");
-		stu.setName("王五");
-		stu.setAge(21);
-
-		data.add(stu);
-
-		OutputStream out = new FileOutputStream("E:/test2.xls");
-		Map<String, String> fields = new LinkedHashMap<String, String>();
-		fields.put("IDNo", "编号");
-		fields.put("name", "姓名");
-		fields.put("sex", "性别");
-		fields.put("age", "年龄");
-		ExcelUtil.ListToExcel(data, out, fields);*/
-		
-		List<T> data=ExcelUtil.excelToList();
+		List<T> data = ExcelUtil.excelToList();
 		System.out.println(JSON.toJSON(data));
 	}
 }
