@@ -1,4 +1,4 @@
-package src.notes.designMode.singletonPattern;
+package src.notes.designPattern.singleton;
 
 /**
  * 饿汉单例模式，在类初始化时，已经自行实例化

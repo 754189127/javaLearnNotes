@@ -1,4 +1,4 @@
-package src.notes.designMode.singletonPattern;
+package src.notes.designPattern.singleton;
 
 /**
  * 枚举单例（最佳方法）

@@ -1,4 +1,4 @@
-package src.notes.designMode.builderPattern;
+package src.notes.designPattern.builder;
 
 /**
  * Builder抽象建造者

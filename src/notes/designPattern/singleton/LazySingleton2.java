@@ -1,4 +1,4 @@
-package src.notes.designMode.singletonPattern;
+package src.notes.designPattern.singleton;
 
 /**
  * 懒汉模式 静态内部类

@@ -1,4 +1,4 @@
-package src.notes.designMode.singletonPattern;
+package src.notes.designPattern.singleton;
 
 /**
  * 懒汉式单例方式1 双重锁检查
